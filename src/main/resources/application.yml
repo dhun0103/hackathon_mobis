@@ -1,0 +1,41 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    password: ENC(wCrNg1f7tf5wVO/OGw5g458AaQb5occF)
+    username: ENC(2UhnLtT2f+qnQUy82vPX/w==)
+    url: ENC(XU3olbL81PtyATJ/oSCLSyXE3j82zt907UvZrvPXVzDQaoTLTWTAnwehnn4vR8rtywZhJJaN6b8z+9Xvd3KVL9txcaQ/64vIwlynROR7279cigd8Nq/BMnOWCtAkBpYqWtkoUGziYpQ=)
+
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            scope: profile_nickname, account_email
+            redirect-uri: ENC(iIpeG5R5JR+ImDSciVbihGQgkWrMX2+i30uJS8RRG7Dos555GTiy1PFeWKpxxLYC)
+            client-authentication-method: POST
+            client-id: ENC(3k14MJnWDjzY4FmW5s6XKhJKovHjBHj3fcazJAq25E4UMjIRnE0X1zgtSprdw8xu)
+            authorization-grant-type: authorization_code
+            client-name: kakao
+            client-secret: ENC(nYpVaoDr8kiYhcZ8e7PBKU/g1blUTV2mRWazyyM0XCCRLbWQPrQC1YB/EUx3P52v)
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user-name-attribute: kakao_account
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+
+
+
+jwt:
+  secret:
+    key: ENC(ozcaEdHaK91s6z4ba4phGhsg77E5VyjJkthb3zHwgBWuTsKENipzM8zFRrsefyMA/GTzI77myTq03WrqMItun0A9xYgQbJl6jhHI2xHOZWHoP1RJtRgwjXGRWkCGW4lDo2LhoUmpVI43aasJytPV2zGAxjce6DZ18+FBoKwA7652FsDwNZ18EwjRMnNyS43F7nv9MVrAoOT8GBUZFdRdPj77LvTROdQLK8UJnq6T+SEdWGYNQQWBFhQ1kNEsGJs5kUmIIv7yXqWa9hcAO3KZyE1u389qn6nUU2fj/s7f8JR5j1wuEh5ylIVfRLif8juo91yUlOZPt2OOn+gP3ZPFymkUnhYvuQumEn38+FYfuME=)
